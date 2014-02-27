@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Viral Coefficient Calculator</title>
+		<meta name="description" content="Calculate your viral coefficient." />
+		<meta name="keywords" content="Viral Coefficient" />
+		<meta name="author" content="Sartaj" />
+		<link rel="shortcut icon" href="favicon.ico"> 
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="nl-blurred">
+		<div class="container demo-1">
+			<!-- Top Navigation -->
+			<header>
+				<h1>Calculate Viral Coefficient</h1>
+			</header>
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form">
+					<input type="text" name="users" size="3" value="1250" autofocus />
+					<span>users have sent a total of</span>
+					<input type="text" name="invites" size="3" value="2000" />
+					<span>invites, of which</span>
+					<input type="text" name="signed" size="1" value="520" />
+					<span> have converted.</span>
+				</form>
+				<div class="answer">
+					My Viral Coefficient is &nbsp;<span id="co"></span>.
+				</div>
+			</div>
+		</div><!-- /container -->
+		<div style="position:fixed;bottom:0;left:0;padding:0.5em">Designed by <a href="http://sartaj.me">Sartaj</a>. CSS inspired by <a href="http://tympanus.net/codrops/2013/05/21/natural-language-form-with-custom-input-elements/">Mary Lou</a>.</div>
+		<script>
+
+				var coInput = {},
+					coElement = document.getElementById('co')
+
+				function resizeInput(e) {
+					e.size = (e.value.length < 1) ? 1 : e.value.length;
+				}
+
+				function mapToObject(e) {
+					coInput[e.name] = e.value;
+				}
+
+				function updateCoefficient() {
+					
+					var i = parseInt(coInput.invites),
+						u = parseInt(coInput.users),					
+						s = parseInt(coInput.signed),
+						iR = i/u,
+						aR = s/i,
+						co = iR * aR;
+
+					coElement.innerHTML = co.toFixed(3);
+
+				};
+
+				function inputUpdate(element) {
+					resizeInput(element);
+					mapToObject(element);
+					updateCoefficient();
+				}
+				
+				var inputs = document.getElementsByTagName("input");
+					inputs = Array.prototype.slice.call(inputs);
+
+				inputs.forEach(function(element, index, array) {
+
+					// Resize input on load
+					inputUpdate(element);
+					// Resize input on each keydown
+					element.addEventListener('keyup', function(){
+						inputUpdate(element);
+					});
+
+					// element.addEventListener('change', function(){
+					// 	inputUpdate(element);
+					// });
+
+				});
+
+		</script>
+	</body>
+</html>

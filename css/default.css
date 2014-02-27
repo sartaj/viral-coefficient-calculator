@@ -1,0 +1,171 @@
+/* general style for the form */
+.nl-form {
+	width: 100%;
+	margin: 0.3em auto 0 auto;
+	font-size: 2em;
+	line-height: 1.5;
+}
+
+.nl-form input, .nl-form span {
+	display: inline;
+}
+/* normalize the input elements, make them look like everything else */
+/*.nl-form input {
+	width: 25%;
+}*/
+
+.nl-form input,
+.nl-form .input,
+.nl-form select,
+.nl-form button {
+	border: none;
+	background: transparent;
+
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+
+	padding: 0;
+	margin: 0;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+
+	color: #6E9DC4;
+	text-align: center;
+
+	cursor: pointer;
+
+	border-bottom: 1px dashed #6E9DC4;
+}
+
+.nl-form input:focus {
+	outline: none;
+}
+
+/* custom placeholder color */
+input::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.8);
+}
+
+input:active::-webkit-input-placeholder ,
+input:focus::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+input::-moz-placeholder {
+	color: rgba(255,255,255,0.8);
+}
+
+input:active::-moz-placeholder,
+input:focus::-moz-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+input:-ms-input-placeholder {  
+	color: rgba(255,255,255,0.8);
+}
+
+input:active::-ms-input-placeholder ,
+input:focus::-ms-input-placeholder {
+	color: rgba(255,255,255,0.2);
+}
+
+::selection {
+	background: #fff; /* Safari */
+	}
+::-moz-selection {
+	background: #fff; /* Firefox */
+}
+
+
+/* General Demo Style */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+body {
+	font-family: 'Open Sans', Calibri, Arial, sans-serif;
+	color: hsla(0, 0%, 0%, 0.3);
+	background: hsla(32, 49%, 89%, 1);
+	font-weight: 300;
+}
+
+a {
+	color: #888;
+	text-decoration: none;
+}
+
+a:hover,
+a:active {
+	color: #333;
+}
+
+/* Header Style */
+.main,
+.container > header {
+	margin: 0 auto;
+	padding: 1em;
+}
+
+.container > header {
+	padding-top: 4em;
+}
+
+h1 {
+	margin: 0;
+	font-weight: 300;
+}
+
+header h1 {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+.main > div {
+	margin-top: 1em;
+}
+
+.answer {
+	font-size: 3em;
+}
+.answer span {
+	font-weight: 700;
+	color: hsla(0,0%,0%,0.7);
+}
+
+/* Main Content */
+.container {
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+.main {
+	margin-left: 8em;
+	border-left: 1px dotted hsla(0, 0%, 0%, 0.2);
+}
+
+.nl-form, h1, .answer {
+	font-size: 2em;
+}
+
+@media screen and (max-width: 45em) {
+	.nl-form, h1, .answer {
+		font-size: 1.5em;
+	}
+
+	.main {
+		margin-left: 3em;
+	}
+
+
+}
+
+
+
