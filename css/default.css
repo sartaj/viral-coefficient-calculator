@@ -92,7 +92,7 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 body {
 	font-family: 'Open Sans', Calibri, Arial, sans-serif;
-	color: hsla(0, 0%, 0%, 0.3);
+	color: hsla(0, 0%, 0%, 0.7);
 	background: hsla(32, 49%, 89%, 1);
 	font-weight: 300;
 }
